@@ -52,6 +52,7 @@ interface {{ ports.port }}
           {% if ports.state is defined and ports.state == "absent" %}
  no switchport access vlan
           {% else %}
+ no switchport trunk allowed vlan {{ vlan_id[1] }}		  
  switchport access vlan {{ vlan_id[1] }}
           {% endif %}
         {% endif %}
